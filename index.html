@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6916953923786095"
+     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script> -->
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyBzLBqPjNLAnRdcuoGeT8U5rCEMMetarxE",
+        authDomain: "space-game-db.firebaseapp.com",
+        databaseURL: "https://space-game-db-default-rtdb.firebaseio.com",
+        projectId: "space-game-db",
+        storageBucket: "space-game-db.appspot.com",
+        messagingSenderId: "393731988188",
+        appId: "1:393731988188:web:54c625c1cc1a79ebdd7219",
+        measurementId: "G-GWYSC6GTRK"
+        };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="module" src="./index.js"></script>
+    <Style>
+        body {
+            margin:0;
+            background: black
+        }
+        input {
+            border: 1px solid black;
+            border-bottom: 1px solid bg-blue-500;
+        }
+    </Style>
+</head>
+<body>
+    <!-- score top left -->
+    <div class="fixed text-white text-sm ml-2 mt-1 select-none"><span>Score: </span><span id="scoreEl">0</span><span> Highscore: </span><span id="highScoreEl">0</span><span> Bombs: </span><span id="bombsEl">0</span><span> FPS: </span><span id="fpsEl">0</span></div>
+    <!-- game over popup -->
+    <div class="fixed inset-0 flex items-center justify-center" id="modalEl">
+        <div class="bg-white max-w-md w-full p-6 text-center">
+            <h1 class="text-4xl font-bold leading-none" id="bigScoreEl">0</h1>
+            <p class ="text-sm text-gray-700 mb-4">Score</p>
+            <div>
+                <button class="bg-blue-500 text-white w-full py-3 rounded-full" id="startGameBtn">Start Game</button>
+            </div>
+            <div class="p-1 mt-4">
+                <label for="player-name" class="text-sm mr-4 text-gray-700">Your Name</label>
+                <input id="player-name" maxlength="10" type="text" />
+            </div>
+            <h1 class ="text-4xl">Highscores</h1>
+            <ol class="list-decimal ml-5">
+                <li><p id="rank1" style="color:#FFD700" class="text-2xl font-bold">INVENTIVEDREAMS     -     1,000,000</p></li>
+                <li><p id="rank2"style="color:#C0C0C0" class="text-xl font-bold">INVENTIVEDREAMS     -     900,000</p></li>
+                <li><p id="rank3"style="color:#CD7F32" class="text-lg font-bold">INVENTIVEDREAMS     -     800,000</p></li>
+                <li><p id="rank4">INVENTIVEDREAMS     -     700,000</p></li>
+                <li><p id="rank5">INVENTIVEDREAMS     -     600,000</p></li>
+                <li><p id="rank6">INVENTIVEDREAMS     -     500,000</p></li>
+                <li><p id="rank7">INVENTIVEDREAMS     -     400,000</p></li>
+                <li><p id="rank8">INVENTIVEDREAMS     -     300,000</p></li>
+                <li><p id="rank9">INVENTIVEDREAMS     -     200,000</p></li>
+                <li><p id="rank10">INVENTIVEDREAMS     -     100,000</p></li>
+            </ol>
+        </div>
+
+    </div>
+    <canvas id="canvas1"></canvas>
+  
+</body>
+</html>
